@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Katafract LLC</title>
+  <meta name="description" content="Katafract LLC builds privacy-first tools for iPhone. Learn about our studio, our apps, and our philosophy.">
+  <link rel="canonical" href="https://katafract.com/about">
+  <!-- Open Graph -->
+  <meta property="og:title" content="About — Katafract LLC">
+  <meta property="og:description" content="We build apps that solve real problems and stay on your phone. No accounts, no cloud, no tracking.">
+  <meta property="og:url" content="https://katafract.com/about">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Katafract">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About — Katafract LLC">
+  <meta name="twitter:description" content="We build apps that solve real problems and stay on your phone. No accounts, no cloud, no tracking.">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.75rem 0;
+    }
+    a.app-card {
+      display: block;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 0.875rem;
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    a.app-card:hover { border-color: rgba(0,240,255,0.2); background: var(--bg3); text-decoration: none; }
+    .app-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .app-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .app-card-cat {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--dim2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+    .app-card-desc { font-size: 0.875rem; color: var(--dim); line-height: 1.6; }
+    .app-card-status {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-top: 0.75rem;
+    }
+    .status-live    { border: 1px solid rgba(0,240,255,0.25);   color: var(--cyan); }
+    .status-soon    { border: 1px solid rgba(74,222,128,0.25);  color: #4ADE80; }
+    .status-planned { border: 1px solid rgba(140,148,166,0.2);  color: var(--dim2); }
+    .philosophy-quote {
+      border-left: 2px solid rgba(0,240,255,0.3);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(235,240,247,0.75);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="/katafract-mark.svg" class="nav-mark" alt="">
+      <span class="nav-brand-name">Katafract</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="hide-sm"><a href="support.html">Support</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="prose-page">
+    <div class="prose-header">
+      <p class="prose-eyebrow">Studio</p>
+      <h1>About Katafract</h1>
+      <p class="prose-meta">Independent software, built for the long game</p>
+    </div>
+
+    <div class="prose-body">
+
+      <p class="light">Katafract LLC is an independent software studio building privacy-first tools for iPhone. We make apps that solve real problems and stay entirely on your device &mdash; no accounts, no cloud, no tracking.</p>
+
+      <div class="philosophy-quote">
+        A cataphract was the heaviest cavalry in the ancient world &mdash; fully armored, unstoppable. We build apps that give your data the same protection.
+      </div>
+
+      <p>Your phone already holds your most sensitive information: your location, your photos, your identity documents. We build around that fact &mdash; not by moving data to servers we control, but by keeping it on the device that already belongs to you.</p>
+
+      <h2>Our Apps</h2>
+
+      <div class="app-grid">
+        <a href="/apps/exifarmor.html" class="app-card">
+          <div class="app-card-icon">🛡️</div>
+          <div class="app-card-name">ExifArmor</div>
+          <div class="app-card-cat">Photo &amp; Video</div>
+          <div class="app-card-desc">Strip hidden GPS, camera, and timestamp metadata from photos before you share them. One tap. Originals untouched.</div>
+          <span class="app-card-status status-live">Live on App Store</span>
+        </a>
+        <a href="/apps/parkarmor.html" class="app-card">
+          <div class="app-card-icon">📍</div>
+          <div class="app-card-name">ParkArmor</div>
+          <div class="app-card-cat">Navigation</div>
+          <div class="app-card-desc">Save your parking spot in one tap. Get walking directions back, set a meter timer, check your lock screen widget.</div>
+          <span class="app-card-status status-soon">Coming Soon</span>
+        </a>
+        <a href="/apps/docarmor.html" class="app-card">
+          <div class="app-card-icon">🔐</div>
+          <div class="app-card-name">DocArmor</div>
+          <div class="app-card-cat">Security</div>
+          <div class="app-card-desc">AES-256 encrypted vault for your IDs, insurance cards, and passports. Face ID protected. iCloud sync disabled.</div>
+          <span class="app-card-status status-planned">Planned</span>
+        </a>
+      </div>
+
+      <h2>How We Build</h2>
+      <p>Every Katafract app ships with the same architecture: all processing happens on your device, no network calls are made for core functionality, and there is no server-side component that could be breached, subpoenaed, or shut down.</p>
+      <p>We price apps as one-time purchases. No subscriptions, no trials that expire, no features held hostage. You pay once and own the license permanently, tied to your Apple ID.</p>
+
+      <h2>Studio</h2>
+
+      <div class="fact-grid">
+        <div class="fact-card">
+          <div class="fact-label">Founded</div>
+          <div class="fact-value">2025</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Platform</div>
+          <div class="fact-value">iOS — iPhone</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Apps</div>
+          <div class="fact-value">3 in pipeline</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-label">Data collected</div>
+          <div class="fact-value">Zero</div>
+        </div>
+      </div>
+
+      <h2>Legal</h2>
+      <p>Katafract, ExifArmor, ParkArmor, DocArmor, and the Katafract shield mark are trademarks of Katafract LLC. All rights reserved.</p>
+      <p>Apple, iPhone, iOS, Face ID, and App Store are trademarks of Apple Inc., registered in the U.S. and other countries. Katafract LLC is an independent developer and is not affiliated with Apple Inc.</p>
+
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <h3>Get in Touch</h3>
+        <p>Katafract LLC</p>
+        <p><a href="mailto:hello@katafract.com">hello@katafract.com</a></p>
+        <p>For general inquiries, press, or partnership questions. We typically respond within one business day.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/katafract-mark.svg" class="nav-mark" alt=""> Katafract LLC
+      </div>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="mailto:hello@katafract.com">Contact</a>
+      </nav>
+      <p class="footer-motto">Teneo &middot; Effrenus &middot; Katafractarius</p>
+      <p class="footer-copy">&copy; 2026 Katafract LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
