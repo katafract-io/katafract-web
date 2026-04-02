@@ -7,8 +7,12 @@ served by nginx from `/var/www/katafract.com/public_html/`.
 ## Directory Structure
 ```
 public_html/
-├── index.html          # Main landing page (standalone styles, accordion app cards)
+├── index.html          # Main landing page (standalone styles, accordion app cards, Enclave section)
 ├── about.html          # Studio overview
+├── pricing.html        # Enclave pricing (Haven, NetArmor, Apps one-time)
+├── enclave.html        # Enclave platform product page (Haven + NetArmor)
+├── dns.html            # Haven DNS free setup guide
+├── canary.html         # Warrant canary — updated quarterly
 ├── privacy.html        # Privacy hub (links to per-app policies)
 ├── support.html        # Support hub (links to per-app support)
 ├── terms.html          # Terms hub (links to per-app terms)
@@ -37,6 +41,13 @@ public_html/
 - **ExifArmor** — Photo metadata stripping. Color: `#00F0FF` (cyan). Live on App Store.
 - **ParkArmor** — Parking spot saver. Color: `#4ADE80` (green). Coming soon.
 - **DocArmor** — Encrypted document vault. Color: `#E879F9` (purple). Planned.
+
+## Enclave Platform (Network Services)
+- **Haven** — Private DNS (AdGuard-based). Color: `#4ADE80` (green). Pricing: $3.99/mo or $31.99/yr. Free tier available.
+- **NetArmor** — WireGuard VPN app for iOS. Color: `#FF006E` (magenta). Pricing: $9.99/mo or $79.99/yr (includes Haven).
+- **Enclave** — Bundle brand for Haven + NetArmor together.
+
+Stripe payment link placeholders in `pricing.html` use `https://buy.stripe.com/HAVEN_MONTHLY` etc. — replace with real links when Stripe products are created.
 
 ## URL Structure
 nginx serves clean URLs via `try_files $uri $uri.html $uri/ =404`.
@@ -103,9 +114,11 @@ Per-app pages must use the **subdirectory** canonical form:
 ## What NOT to Do
 - Do not use relative paths in subdirectory pages (will break CSS/assets)
 - Do not modify `index.html`'s inline `<style>` block to reference `style.css` — it is intentionally standalone
-- Do not add iCloud sync, cloud storage, accounts, analytics, or network calls to any app description
+- Do not add iCloud sync, cloud storage, accounts, analytics, or network calls to any **iOS app** description
 - Do not change the "Data Not Collected" Apple Privacy Nutrition Label claims — they must remain accurate
-- Do not add subscription pricing — all apps are one-time $2.99 purchases
+- iOS apps (ExifArmor, ParkArmor, DocArmor) are one-time $2.99 purchases — do not add subscription pricing to them
+- Enclave network services (Haven, NetArmor) ARE subscription-based — pricing is established above
+- Do not change canary.html dates without verifying the actual current date and next-due date
 
 ## Deployment
 Files are served directly from `/var/www/katafract.com/public_html/` on the production server.
