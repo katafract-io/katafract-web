@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WraithVPN — Disappear from the internet</title>
+  <meta name="description" content="WraithVPN delivers WireGuard encryption and Haven DNS protection in one app. No logs. No tracking. Global nodes. Coming soon to iOS and macOS.">
+  <link rel="canonical" href="https://katafract.com/apps/wraith">
+  <meta property="og:title" content="WraithVPN — Disappear from the internet">
+  <meta property="og:description" content="WireGuard VPN with built-in Haven DNS blocking. No logs, no tracking. EU, APAC, and US nodes.">
+  <meta property="og:url" content="https://katafract.com/apps/wraith">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Katafract">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WraithVPN — Disappear from the internet">
+  <meta name="twitter:description" content="WireGuard VPN + Haven DNS. No logs. Coming soon from Katafract.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .app-hero { padding: 4rem 1.5rem 3rem; max-width: 900px; margin: 0 auto; }
+    .app-main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .app-hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #818CF8;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .app-hero-eyebrow .back-link { color: var(--dim2); font-size: 0.65rem; letter-spacing: 0.15em; }
+    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
+    .app-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .app-hero h1 em { font-style: normal; color: #818CF8; }
+    .app-hero .tagline { font-size: 1.1rem; color: var(--dim); line-height: 1.7; max-width: 580px; margin-bottom: 2.5rem; }
+    .coming-soon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      background: rgba(129,140,248,0.08);
+      border: 1px solid rgba(129,140,248,0.2);
+      color: #818CF8;
+      margin-bottom: 3rem;
+    }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0 3rem; }
+    .feature-card { background: rgba(10,10,20,0.5); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s; }
+    .feature-card:hover { border-color: rgba(129,140,248,0.2); }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .feature-desc { font-size: 0.875rem; color: var(--dim); line-height: 1.65; }
+    .privacy-block { background: rgba(129,140,248,0.03); border: 1px solid rgba(129,140,248,0.1); border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+    .privacy-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+    .privacy-block p { font-size: 0.9rem; color: var(--dim); line-height: 1.7; margin-bottom: 0.5rem; }
+    .privacy-block p:last-child { margin-bottom: 0; }
+    .privacy-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .privacy-pill { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: rgba(129,140,248,0.06); border: 1px solid rgba(129,140,248,0.15); color: #818CF8; }
+    .app-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #818CF8; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .app-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .app-section-sub { font-size: 0.95rem; color: var(--dim); line-height: 1.7; }
+    @media (min-width: 768px) { .app-hero { padding: 6rem 3.5rem 4.5rem; } .app-main { padding: 0 3.5rem 7rem; } }
+    @media (min-width: 1100px) { .app-hero { padding: 7rem 5rem 5rem; } .app-main { padding: 0 5rem 8rem; } }
+    @media (max-width: 480px) { .app-hero { padding: 3rem 1.25rem 2.5rem; } .app-main { padding: 0 1.25rem 4rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/katafract-mark.svg" class="nav-mark" alt="">
+      <span class="nav-brand-name">Katafract</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="hide-sm"><a href="/support/wraith.html">Support</a></li>
+      <li><a href="/privacy/wraith.html">Privacy</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="app-hero">
+    <div class="app-hero-eyebrow">
+      <span>WraithVPN</span>
+      <span>&middot;</span>
+      <a href="/" class="back-link">by Katafract &nearr;</a>
+    </div>
+    <h1>Disappear from<br>the <em>internet</em></h1>
+    <p class="tagline">WireGuard encryption and Haven DNS protection in one app. No logs, no tracking, no compromises. Browse like a ghost across EU, APAC, and US nodes.</p>
+    <div class="coming-soon-badge">
+      &#x1F551; Coming soon &mdash; follow <a href="/" style="color:#818CF8;margin-left:0.25rem">katafract.com</a>&nbsp;for updates
+    </div>
+  </div>
+
+  <main class="app-main">
+
+    <hr class="section-divider">
+
+    <div style="margin-bottom:0.5rem">
+      <div class="app-section-label">Features</div>
+      <h2 class="app-section-title">Privacy without compromise</h2>
+      <p class="app-section-sub">One app. WireGuard-grade encryption. Built-in DNS blocking. Global nodes. Strict no-log policy.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F510;</div>
+        <div class="feature-title">WireGuard Protocol <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#818CF8;letter-spacing:0.05em">FREE</span></div>
+        <div class="feature-desc">Industry-leading WireGuard encryption. Faster and more modern than OpenVPN or IKEv2. Your secure tunnel is established in milliseconds with minimal battery drain.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F6E1;&#xFE0F;</div>
+        <div class="feature-title">Haven DNS Protection <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#818CF8;letter-spacing:0.05em">FREE</span></div>
+        <div class="feature-desc">Built-in ad and tracker blocking on every node. Powered by AdGuard &mdash; stops ads, trackers, and malware at the DNS layer before they reach your device.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F310;</div>
+        <div class="feature-title">Global Exit Nodes <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#818CF8;letter-spacing:0.05em">PRO</span></div>
+        <div class="feature-desc">Four nodes: Europe West (Frankfurt), Europe North (Helsinki), Asia Pacific (Singapore), United States (Central). Auto-selects the nearest, or choose manually.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F573;&#xFE0F;</div>
+        <div class="feature-title">Zero-Log Policy <span style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#818CF8;letter-spacing:0.05em">ALL</span></div>
+        <div class="feature-desc">We never log traffic, DNS queries, browsing history, or your real IP. WireGuard session keys are ephemeral &mdash; cryptographically fresh every session.</div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="privacy-block">
+      <h2>&#x1F47B; Your traffic is never logged</h2>
+      <p>No connection logs, no DNS query logs, no browsing history, no real IP stored. WireGuard session keys are ephemeral and discarded after each session. Haven DNS blocks ads and trackers before they can phone home &mdash; without logging which domains you visited.</p>
+      <p>Apple Privacy Nutrition Label: <strong>Limited data collected &mdash; email and subscription status only.</strong></p>
+      <div class="privacy-pills">
+        <span class="privacy-pill">No traffic logs</span>
+        <span class="privacy-pill">No DNS logs</span>
+        <span class="privacy-pill">No browsing history</span>
+        <span class="privacy-pill">No real IP stored</span>
+        <span class="privacy-pill">WireGuard ephemeral keys</span>
+        <span class="privacy-pill">Haven DNS</span>
+        <span class="privacy-pill">Strict no-log policy</span>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="callout">
+      <p><strong>Free to download.</strong> The free tier includes one WraithVPN node with full Haven DNS protection &mdash; no payment required. <strong>WraithVPN Pro ($4.99/mo or $39.99/yr)</strong> unlocks all four global nodes, manual node selection, and priority connections. Subscriptions are processed by Apple (iOS/macOS) or Google (Android). Refunds handled by Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or Google Play support.</p>
+      <p style="margin-top:0.75rem;margin-bottom:0"><a href="/terms/wraith.html">Full Terms of Service &rarr;</a></p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div style="text-align:center;padding:1rem 0 2rem">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--dim2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem">Coming soon</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);margin-bottom:0.5rem">Free &middot; Pro $4.99/mo or $39.99/yr</div>
+      <div style="font-size:0.875rem;color:var(--dim)">iOS &middot; macOS &middot; Android</div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/katafract-mark.svg" class="nav-mark" alt=""> Katafract LLC
+      </div>
+      <nav class="footer-nav">
+        <a href="/privacy/wraith.html">Privacy Policy</a>
+        <a href="/terms/wraith.html">Terms of Service</a>
+        <a href="/support/wraith.html">Support</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:hello@katafract.com">Contact</a>
+      </nav>
+      <p class="footer-motto">Teneo &middot; Effrenus &middot; Katafractarius</p>
+      <p class="footer-copy">&copy; 2026 Katafract LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
