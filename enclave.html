@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enclave — Privacy Network by Katafract</title>
-  <meta name="description" content="Enclave is Katafract's privacy network platform. Haven gives you private DNS. NetArmor gives you a no-log VPN. One subscription, total control.">
+  <meta name="description" content="Enclave is Katafract's privacy network platform. Haven gives you private DNS. WraithVPN gives you a no-log VPN. One subscription, total control.">
   <link rel="canonical" href="https://katafract.com/enclave">
   <meta property="og:title" content="Enclave — Privacy Network by Katafract">
-  <meta property="og:description" content="Haven private DNS and NetArmor VPN. No logs. No accounts. No compromises.">
+  <meta property="og:description" content="Haven private DNS and WraithVPN. No logs. No accounts. No compromises.">
   <meta property="og:url" content="https://katafract.com/enclave">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Katafract">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Enclave — Privacy Network by Katafract">
-  <meta name="twitter:description" content="Haven private DNS and NetArmor VPN. No logs. No accounts. No compromises.">
+  <meta name="twitter:description" content="Haven private DNS and WraithVPN. No logs. No accounts. No compromises.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -105,7 +105,7 @@
       overflow: hidden;
     }
     .product-card.haven { border-color: rgba(74,222,128,0.15); }
-    .product-card.netarmor { border-color: rgba(255,0,110,0.2); }
+    .product-card.wraith { border-color: rgba(255,0,110,0.2); }
     .product-card::before {
       content: '';
       position: absolute;
@@ -113,7 +113,7 @@
       height: 2px;
     }
     .product-card.haven::before { background: linear-gradient(90deg, transparent, #4ADE80, transparent); }
-    .product-card.netarmor::before { background: linear-gradient(90deg, transparent, #FF006E, transparent); }
+    .product-card.wraith::before { background: linear-gradient(90deg, transparent, #FF006E, transparent); }
     .product-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.85rem;
@@ -121,7 +121,7 @@
       margin-bottom: 0.25rem;
     }
     .product-card.haven .product-name { color: #4ADE80; }
-    .product-card.netarmor .product-name { color: #FF006E; }
+    .product-card.wraith .product-name { color: #FF006E; }
     .product-tagline {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -152,7 +152,7 @@
     }
     .product-features li .check { font-size: 0.8rem; }
     .product-card.haven .check { color: #4ADE80; }
-    .product-card.netarmor .check { color: #FF006E; }
+    .product-card.wraith .check { color: #FF006E; }
     .product-price {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
@@ -177,7 +177,7 @@
       transition: background 0.15s;
     }
     .btn-haven:hover { background: rgba(74,222,128,0.08); text-decoration: none; }
-    .btn-netarmor {
+    .btn-wraith {
       background: #FF006E;
       color: #fff;
       padding: 0.6rem 1.25rem;
@@ -188,7 +188,7 @@
       display: inline-block;
       transition: opacity 0.15s;
     }
-    .btn-netarmor:hover { opacity: 0.85; text-decoration: none; }
+    .btn-wraith:hover { opacity: 0.85; text-decoration: none; }
     .free-badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
@@ -300,7 +300,7 @@
   <section class="enclave-hero">
     <p class="enclave-eyebrow">Enclave Network Platform</p>
     <h1>Your network,<br><em>armored</em>.</h1>
-    <p>Haven gives you private, ad-blocking DNS. NetArmor routes your traffic through our zero-log network. Together they form Enclave &mdash; a privacy layer built from the ground up.</p>
+    <p>Haven gives you private, ad-blocking DNS. WraithVPN routes your traffic through our zero-log network. Together they form Enclave &mdash; a privacy layer built from the ground up.</p>
     <div class="hero-cta-row">
       <a href="/pricing.html" class="btn btn-primary">See Plans</a>
       <a href="/dns.html" class="btn btn-secondary">Free DNS Setup →</a>
@@ -330,11 +330,11 @@
         <a href="/dns.html" class="btn-haven">Free DNS Setup Guide</a>
       </div>
 
-      <!-- NetArmor -->
-      <div class="product-card netarmor">
-        <div class="product-name">NetArmor</div>
+      <!-- WraithVPN -->
+      <div class="product-card wraith">
+        <div class="product-name">WraithVPN</div>
         <div class="product-tagline">No-log VPN &mdash; WireGuard protocol</div>
-        <p class="product-desc">NetArmor is a WireGuard-based VPN app for iPhone. Traffic exits through our WraithGate nodes in Frankfurt, Helsinki, Singapore, and Chicago. We keep no connection logs, no traffic logs, and no metadata that could identify you.</p>
+        <p class="product-desc">WraithVPN is a WireGuard-based VPN app for iPhone. Traffic exits through our WraithGate nodes in Frankfurt, Helsinki, Singapore, and US Central. We keep no connection logs, no traffic logs, and no metadata that could identify you.</p>
         <ul class="product-features">
           <li><span class="check">✓</span> WireGuard protocol</li>
           <li><span class="check">✓</span> No connection or traffic logs</li>
@@ -345,7 +345,7 @@
         </ul>
         <div class="product-price">$9.99<span style="font-size:1rem;font-weight:400;color:var(--dim)">/mo</span></div>
         <div class="product-price-note">Or $79.99/yr (save 33%) &mdash; includes Haven subscription</div>
-        <a href="/pricing.html" class="btn-netarmor">Get NetArmor</a>
+        <a href="/pricing.html" class="btn-wraith">Get WraithVPN</a>
       </div>
 
     </div>
@@ -364,7 +364,7 @@
       <div class="arch-node">
         <div class="arch-node-icon">🔒</div>
         <div class="arch-node-name">WraithGate Nodes</div>
-        <div class="arch-node-desc">WireGuard exit nodes in Frankfurt, Helsinki, Singapore, and Chicago. nftables firewall, minimal attack surface.</div>
+        <div class="arch-node-desc">WireGuard exit nodes in Frankfurt, Helsinki, Singapore, and US Central. nftables firewall, minimal attack surface.</div>
       </div>
       <div class="arch-node">
         <div class="arch-node-icon">🕸️</div>
@@ -399,7 +399,7 @@
       </div>
       <div class="nolog-card">
         <div class="nolog-title">No accounts</div>
-        <p>NetArmor on iOS uses device-based entitlement verification. No email address or username is required to use the service.</p>
+        <p>WraithVPN on iOS uses device-based entitlement verification. No email address or username is required to use the service.</p>
       </div>
     </div>
     <p style="margin-top:2rem;font-size:0.875rem;color:var(--dim);">
