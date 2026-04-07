@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pricing — Katafract Enclave</title>
-  <meta name="description" content="Haven DNS protection from $3.99/month. WraithVPN full Enclave from $9.99/month. No identity required. Token-based. Cancel anytime.">
+  <meta name="description" content="Haven DNS protection from $1.99/month. WraithVPN from $4.99/month. Enclave full platform from $9.99/month. No identity required. Token-based. Cancel anytime.">
   <link rel="canonical" href="https://katafract.com/pricing">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -79,7 +79,8 @@
   </a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li class="hide-sm"><a href="/#apps">Apps</a></li>
+    <li class="hide-sm"><a href="/enclave.html">Enclave</a></li>
+    <li class="hide-sm"><a href="/dns.html">Haven DNS</a></li>
     <li><a href="/pricing.html" style="color:#FF006E">Pricing</a></li>
     <li><a href="/about.html">About</a></li>
   </ul>
@@ -100,7 +101,7 @@
         <button class="toggle-btn active" id="btn-monthly" onclick="setBilling('monthly')">Monthly</button>
         <button class="toggle-btn" id="btn-annual" onclick="setBilling('annual')">Annual</button>
       </div>
-      <span class="save-badge" id="save-badge">Save 33%</span>
+      <span class="save-badge" id="save-badge">Save 37%</span>
     </div>
   </div>
 
@@ -133,10 +134,10 @@
       <div class="plan-name">Haven</div>
       <div class="plan-tagline">Encrypted DNS with ad, tracker, and malware blocking. No account required.</div>
       <div class="plan-price">
-        <div class="amount monthly-price" style="color:#4ADE80">$3.99</div>
-        <div class="amount annual-price" style="color:#4ADE80;display:none">$2.66</div>
+        <div class="amount monthly-price" style="color:#4ADE80">$1.99</div>
+        <div class="amount annual-price" style="color:#4ADE80;display:none">$1.25</div>
         <div class="period">/ month</div>
-        <div class="annual-note">billed $31.99/year — save 33%</div>
+        <div class="annual-note">billed $14.99/year — save 37%</div>
       </div>
       <ul class="plan-features">
         <li><span class="check" style="color:#4ADE80">✓</span> Encrypted DNS (DoH + DoT)</li>
@@ -147,20 +148,20 @@
         <li class="dim"><span class="check">–</span> VPN routing</li>
         <li class="dim"><span class="check">–</span> Alias Guard</li>
       </ul>
-      <a href="https://buy.stripe.com/14A9AT1xL6H08QW04Effy03" class="plan-cta secondary" id="cta-haven">Get Haven →</a>
+      <a href="https://buy.stripe.com/aFa7sLekx8P8aZ47x6ffy06" class="plan-cta secondary" id="cta-haven">Get Haven →</a>
     </div>
 
-    <!-- WraithVPN (featured) -->
+    <!-- WraithVPN -->
     <div class="plan-card featured">
       <div style="position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(255,0,110,.08) 0%,transparent 70%);pointer-events:none"></div>
-      <div class="plan-label" style="color:#FF006E">WraithVPN · Full Enclave</div>
+      <div class="plan-label" style="color:#FF006E">WraithVPN · Popular</div>
       <div class="plan-name">WraithVPN</div>
-      <div class="plan-tagline">WraithVPN + Haven DNS + Alias Guard. Token-based — we never store your identity.</div>
+      <div class="plan-tagline">Haven + VPN + Alias Guard + Exposure Alerts. Token-based — we never store your identity.</div>
       <div class="plan-price">
-        <div class="amount monthly-price" style="color:#FF006E">$9.99</div>
-        <div class="amount annual-price" style="color:#FF006E;display:none">$6.66</div>
+        <div class="amount monthly-price" style="color:#FF006E">$4.99</div>
+        <div class="amount annual-price" style="color:#FF006E;display:none">$3.33</div>
         <div class="period">/ month</div>
-        <div class="annual-note">billed $79.99/year — save 33%</div>
+        <div class="annual-note">billed $39.99/year — save 33%</div>
       </div>
       <ul class="plan-features">
         <li><span class="check" style="color:#FF006E">✓</span> WraithVPN — 4 global WraithGate nodes</li>
@@ -170,7 +171,29 @@
         <li><span class="check" style="color:#FF006E">✓</span> Connect on 5 devices</li>
         <li><span class="check" style="color:#FF006E">✓</span> No logs · No identity stored</li>
       </ul>
-      <a href="https://buy.stripe.com/dRm8wPdgtfdwffk9Feffy01" class="plan-cta primary" id="cta-wraith">Get WraithVPN →</a>
+      <a href="https://buy.stripe.com/bJe28r4JX9TcgjocRqffy04" class="plan-cta primary" id="cta-wraith">Get WraithVPN →</a>
+    </div>
+
+    <!-- Enclave -->
+    <div class="plan-card">
+      <div class="plan-label" style="color:#FF006E">Enclave · Full Platform</div>
+      <div class="plan-name">Enclave</div>
+      <div class="plan-tagline">Everything in WraithVPN plus multi-device and priority access. Full platform experience.</div>
+      <div class="plan-price">
+        <div class="amount monthly-price" style="color:#FF006E">$9.99</div>
+        <div class="amount annual-price" style="color:#FF006E;display:none">$6.67</div>
+        <div class="period">/ month</div>
+        <div class="annual-note">billed $79.99/year — save 33%</div>
+      </div>
+      <ul class="plan-features">
+        <li><span class="check" style="color:#FF006E">✓</span> Everything in WraithVPN</li>
+        <li><span class="check" style="color:#FF006E">✓</span> Up to 10 devices</li>
+        <li><span class="check" style="color:#FF006E">✓</span> Priority node access</li>
+        <li><span class="check" style="color:#FF006E">✓</span> Unlimited Alias Guard aliases</li>
+        <li><span class="check" style="color:#FF006E">✓</span> Advanced blocklist controls</li>
+        <li><span class="check" style="color:#FF006E">✓</span> Early access to new features</li>
+      </ul>
+      <a href="https://buy.stripe.com/5kQcN53FT0iC1oubNmffy08" class="plan-cta secondary" id="cta-enclave">Get Enclave →</a>
     </div>
 
   </div>
@@ -198,21 +221,22 @@
           <th style="color:#00F0FF">Apps</th>
           <th style="color:#4ADE80">Haven</th>
           <th style="color:#FF006E">WraithVPN</th>
+          <th style="color:#FF006E">Enclave</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Ad + tracker blocking</td><td class="no">—</td><td class="yes">✓</td><td class="yes-mag">✓</td></tr>
-        <tr><td>Malware domain blocking</td><td class="no">—</td><td class="yes">✓</td><td class="yes-mag">✓</td></tr>
-        <tr><td>WraithVPN</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td></tr>
-        <tr><td>Global exit nodes</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">4 regions</td></tr>
-        <tr><td>Alias Guard (email aliases)</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">3 aliases</td></tr>
-        <tr><td>Exposure alerts</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td></tr>
-        <tr><td>No identity stored</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td></tr>
-        <tr><td>No logs</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td></tr>
-        <tr><td>iOS app</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td></tr>
-        <tr><td>Android app</td><td class="no">—</td><td class="no">soon</td><td class="yes-mag">soon</td></tr>
-        <tr><td>Mac + Windows (config file)</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td></tr>
-        <tr><td>Devices included</td><td class="yes">unlimited</td><td class="yes">unlimited</td><td class="yes-mag">5</td></tr>
+        <tr><td>Ad + tracker blocking</td><td class="no">—</td><td class="yes">✓</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>Malware domain blocking</td><td class="no">—</td><td class="yes">✓</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>WraithVPN</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>Global exit nodes</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">4 regions</td><td class="yes-mag">4 regions</td></tr>
+        <tr><td>Alias Guard (email aliases)</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">3 aliases</td><td class="yes-mag">Unlimited</td></tr>
+        <tr><td>Exposure alerts</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>No identity stored</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>No logs</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>iOS app</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>Android app</td><td class="no">—</td><td class="no">soon</td><td class="yes-mag">soon</td><td class="yes-mag">soon</td></tr>
+        <tr><td>Mac + Windows (config file)</td><td class="no">—</td><td class="no">—</td><td class="yes-mag">✓</td><td class="yes-mag">✓</td></tr>
+        <tr><td>Devices included</td><td class="yes">unlimited</td><td class="yes">unlimited</td><td class="yes-mag">5</td><td class="yes-mag">10</td></tr>
       </tbody>
     </table>
   </div>
@@ -277,12 +301,14 @@
 <script>
   let billing = 'monthly';
   const monthlyLinks = {
-    haven: 'https://buy.stripe.com/14A9AT1xL6H08QW04Effy03',
-    wraith: 'https://buy.stripe.com/dRm8wPdgtfdwffk9Feffy01'
+    haven: 'https://buy.stripe.com/aFa7sLekx8P8aZ47x6ffy06',
+    wraith: 'https://buy.stripe.com/bJe28r4JX9TcgjocRqffy04',
+    enclave: 'https://buy.stripe.com/5kQcN53FT0iC1oubNmffy08'
   };
   const annualLinks = {
-    haven: 'https://buy.stripe.com/00waEX7W9fdw5EKbNmffy02',
-    wraith: 'https://buy.stripe.com/9B69ATccp8P8ebg7x6ffy00'
+    haven: 'https://buy.stripe.com/00wcN55O1aXgffkg3Cffy07',
+    wraith: 'https://buy.stripe.com/9B600jfoB9Tcd7cbNmffy05',
+    enclave: 'https://buy.stripe.com/28EfZh90d9Tc8QW3gQffy09'
   };
 
   function setBilling(mode) {
@@ -297,6 +323,7 @@
 
     document.getElementById('cta-haven').href = mode === 'annual' ? annualLinks.haven : monthlyLinks.haven;
     document.getElementById('cta-wraith').href = mode === 'annual' ? annualLinks.wraith : monthlyLinks.wraith;
+    document.getElementById('cta-enclave').href = mode === 'annual' ? annualLinks.enclave : monthlyLinks.enclave;
   }
 
   document.querySelectorAll('.faq-item').forEach(item => {
