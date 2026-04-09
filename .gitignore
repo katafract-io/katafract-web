@@ -18,3 +18,7 @@ Thumbs.db
 
 # Claude project instructions
 CLAUDE.md
+
+# Keep og:image assets
+!images/og-*.jpg
+!images/og-*.png
