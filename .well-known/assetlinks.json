@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.katafract.wraith",
+      "sha256_cert_fingerprints": [
+        "C8:1C:85:85:98:90:69:7F:06:C1:41:45:7E:A1:E1:95:9A:D4:5C:4E:27:89:4C:64:36:B8:EA:A4:32:AB:FD:44"
+      ]
+    }
+  }
+]
