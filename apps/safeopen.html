@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeOpen — Inspect links &amp; QR codes before you open them</title>
+  <meta name="description" content="SafeOpen scans QR codes and inspects links offline to detect risk before you tap. Free tier with local analysis. Pro tier includes safe opening via Katafract proxy nodes.">
+  <link rel="canonical" href="https://katafract.com/apps/safeopen">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SafeOpen — Inspect links &amp; QR codes before you open them">
+  <meta property="og:description" content="Scan QR codes, paste links, and see the risk — offline. Strip tracking parameters. Pro opens safely via masked identity. Free to download on iOS.">
+  <meta property="og:url" content="https://katafract.com/apps/safeopen">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Katafract">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SafeOpen — Inspect links &amp; QR codes before you open them">
+  <meta name="twitter:description" content="Inspect before you tap. Offline scanning + risk scoring. Optional Pro for safe opening via proxy.">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Fonts (self-hosted) -->
+  <link rel="preload" href="/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .app-hero { padding: 4rem 1.5rem 3rem; max-width: 900px; margin: 0 auto; }
+    .app-main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+    .app-hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #00D4FF;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .app-hero-eyebrow .back-link { color: var(--dim2); font-size: 0.65rem; letter-spacing: 0.15em; }
+    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
+    .app-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .app-hero h1 em { font-style: normal; color: #00D4FF; }
+    .app-hero .tagline { font-size: 1.1rem; color: var(--dim); line-height: 1.7; max-width: 580px; margin-bottom: 2.5rem; }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      color: #00D4FF;
+      margin-bottom: 3rem;
+    }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
+    .tier-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0 3rem; }
+    .tier-card { background: rgba(10,10,20,0.5); border: 1px solid var(--border); border-radius: 1rem; padding: 2rem; }
+    .tier-card.pro { border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.02); }
+    .tier-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #00D4FF; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .tier-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .tier-features { list-style: none; margin: 0; padding: 0; }
+    .tier-features li { font-size: 0.9rem; color: var(--dim); line-height: 1.65; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+    .tier-features li:last-child { border-bottom: none; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0 3rem; }
+    .feature-card { background: rgba(10,10,20,0.5); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s; }
+    .feature-card:hover { border-color: rgba(0,212,255,0.2); }
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .feature-desc { font-size: 0.875rem; color: var(--dim); line-height: 1.65; }
+    .steps { display: flex; flex-direction: column; gap: 1.5rem; margin: 2rem 0 3rem; }
+    .step { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: #00D4FF;
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .step-body p { font-size: 0.9rem; color: var(--dim); line-height: 1.65; margin: 0; }
+    .privacy-block { background: rgba(0,212,255,0.03); border: 1px solid rgba(0,212,255,0.1); border-radius: 1rem; padding: 2rem; margin: 2rem 0; }
+    .privacy-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+    .privacy-block p { font-size: 0.9rem; color: var(--dim); line-height: 1.7; margin-bottom: 0.5rem; }
+    .privacy-block p:last-child { margin-bottom: 0; }
+    .privacy-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .privacy-pill { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: rgba(0,212,255,0.06); border: 1px solid rgba(0,212,255,0.15); color: #00D4FF; }
+    .app-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #00D4FF; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .app-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .app-section-sub { font-size: 0.95rem; color: var(--dim); line-height: 1.7; }
+    @media (min-width: 768px) {
+      .app-hero { padding: 6rem 3.5rem 4.5rem; }
+      .app-main { padding: 0 3.5rem 7rem; }
+    }
+    @media (min-width: 1100px) {
+      .app-hero { padding: 7rem 5rem 5rem; }
+      .app-main { padding: 0 5rem 8rem; }
+    }
+    @media (max-width: 480px) {
+      .app-hero { padding: 3rem 1.25rem 2.5rem; }
+      .app-main { padding: 0 1.25rem 4rem; }
+      .tier-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/katafract-mark.svg" class="nav-mark" alt="">
+      <span class="nav-brand-name">Katafract</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="hide-sm"><a href="/enclave.html">Enclave</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="app-hero">
+    <div class="app-hero-eyebrow">
+      <span>SafeOpen</span>
+      <span>&middot;</span>
+      <a href="/" class="back-link">by Katafract &nearr;</a>
+    </div>
+    <h1>Know before you <em>open.</em></h1>
+    <p class="tagline">Scan any QR code or paste a link to see exactly what it is and where it goes &mdash; before you tap. Risk scoring, tracking parameter stripping, and clean URLs. All on your device, no internet required.</p>
+    <div class="live-badge">
+      &#x2713; Available on iOS &nbsp;&mdash;&nbsp; Free download
+    </div>
+  </div>
+
+  <main class="app-main">
+
+    <hr class="section-divider">
+
+    <div style="margin-bottom:0.5rem">
+      <div class="app-section-label">Free &middot; Works Offline</div>
+      <h2 class="app-section-title">Inspect on your device</h2>
+      <p class="app-section-sub">Scanning, decoding, and risk analysis run entirely locally. No internet connection required. Nothing leaves your phone.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4F7;</div>
+        <div class="feature-title">QR Scanner</div>
+        <div class="feature-desc">Point your camera at any QR code or barcode. Decodes instantly &mdash; URLs, Wi-Fi credentials, contacts, calendar events, SMS, email, phone numbers, or plain text. Fully offline.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F517;</div>
+        <div class="feature-title">Paste &amp; Inspect</div>
+        <div class="feature-desc">Paste any link or share it from another app. SafeOpen normalizes the URL, classifies the payload type, and shows you the destination before you do anything with it.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x26A0;&#xFE0F;</div>
+        <div class="feature-title">Local Risk Scoring</div>
+        <div class="feature-desc">Heuristics flag raw IP addresses, punycode/IDN spoofing, unusual ports, suspicious path keywords, excessive query parameters, and known URL shorteners. Four levels: Low, Caution, High, Unknown.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4AC;</div>
+        <div class="feature-title">Plain-Language Explanation</div>
+        <div class="feature-desc">No jargon. Every risk flag comes with a clear explanation of why it matters. You decide with full context &mdash; not just a color.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x2702;&#xFE0F;</div>
+        <div class="feature-title">Tracking Parameter Stripping</div>
+        <div class="feature-desc">Detects and removes 38+ known tracking parameters (UTM tags, fbclid, gclid, msclkid, and more). Shows you the clean URL alongside the original so you can copy it without the surveillance baggage.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4CB;</div>
+        <div class="feature-title">Local Scan History</div>
+        <div class="feature-desc">Every inspection is saved locally. Review, copy, or share any past result. History stays on your device &mdash; never synced, never transmitted.</div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div style="margin-bottom:0.5rem">
+      <div class="app-section-label">Pro &middot; $0.99/mo or $4.99/yr</div>
+      <h2 class="app-section-title">Open safely with a masked identity</h2>
+      <p class="app-section-sub">Optional subscription that routes your open request through Katafract proxy nodes &mdash; so the destination sees a disposable identity, never your real IP.</p>
+    </div>
+
+    <div class="tier-container">
+      <div class="tier-card">
+        <div class="tier-label">Free</div>
+        <div class="tier-title">Inspect &amp; Decide</div>
+        <div style="font-size:0.9rem;color:var(--dim);line-height:1.65;margin-bottom:1.5rem">Full offline inspection. Works without a subscription, forever.</div>
+        <ul class="tier-features">
+          <li>QR code &amp; barcode scanning</li>
+          <li>Link &amp; payload inspection</li>
+          <li>Local risk scoring</li>
+          <li>Tracking parameter detection &amp; stripping</li>
+          <li>10 payload types detected</li>
+          <li>Local history &mdash; never synced</li>
+          <li>Works fully offline</li>
+        </ul>
+      </div>
+      <div class="tier-card pro">
+        <div class="tier-label">Pro</div>
+        <div class="tier-title">Open Safely</div>
+        <div style="font-size:0.9rem;color:var(--dim);line-height:1.65;margin-bottom:1.5rem">Everything in Free, plus proxy-backed safe browsing.</div>
+        <ul class="tier-features">
+          <li>Everything in Free</li>
+          <li><strong style="color:#00D4FF">&ldquo;Open Safely&rdquo;</strong> &mdash; browse via Katafract proxy nodes</li>
+          <li>Prefetch preview: see redirect chain &amp; page title before opening</li>
+          <li>Disposable IPv6 identity per session</li>
+          <li>Destination never sees your real IP address</li>
+          <li>Isolated non-persistent browser session</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div style="margin-bottom:0.5rem">
+      <div class="app-section-label">How It Works</div>
+      <h2 class="app-section-title">Scan. Inspect. Open safely.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Scan or Paste</h3>
+          <p>Point the camera at a QR code or barcode, paste a link, or share one from any app. SafeOpen decodes it instantly &mdash; no internet required at this step.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Inspect</h3>
+          <p>SafeOpen classifies the payload type, normalizes the URL, strips tracking parameters, and runs local risk heuristics. You see the destination, the clean URL, the risk level, and a plain-language explanation of every flag.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Decide</h3>
+          <p>Copy the clean URL, open directly in Safari, or tap <strong>Open Safely</strong> (Pro) to browse through a Katafract proxy node &mdash; redirect chain preview first, then an isolated browser session with a disposable IPv6 identity.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="privacy-block">
+      <h2>&#x1F512; Designed to stay on your device</h2>
+      <p>Free tier inspection runs entirely on-device. Scanning, decoding, risk scoring, tracking parameter detection &mdash; no network calls, no URL submissions, no servers involved. Your scans are stored locally and never leave your phone.</p>
+      <p>Pro tier connects to Katafract proxy nodes only when you explicitly tap &ldquo;Open Safely.&rdquo; The request routes through our infrastructure under a fresh disposable identity. We do not log your browsing activity or store the URLs you open.</p>
+      <p>Apple Privacy Nutrition Label: <strong>Data Not Collected</strong> (free tier). Pro tier: <strong>IP Address</strong> only when actively routing an open request &mdash; never tied to your identity.</p>
+      <div class="privacy-pills">
+        <span class="privacy-pill">No accounts required</span>
+        <span class="privacy-pill">No cloud sync</span>
+        <span class="privacy-pill">No URL submissions (free)</span>
+        <span class="privacy-pill">Local history only</span>
+        <span class="privacy-pill">Works offline</span>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div>
+      <div class="app-section-label">More from Katafract</div>
+      <p class="app-section-sub">SafeOpen is part of a family of privacy-first iOS utilities. <a href="/apps/exifarmor.html">ExifArmor</a> strips hidden metadata from photos before you share them. <a href="/apps/parkarmor.html">ParkArmor</a> saves your parking spot with no account required. All built on the same principle: your data stays yours.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div style="text-align:center;padding:1rem 0 2rem">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--dim2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem">Available now</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--text);margin-bottom:0.5rem">SafeOpen for iOS</div>
+      <div style="font-size:0.875rem;color:var(--dim);margin-bottom:1.5rem">iPhone &amp; iPad &middot; iOS 17+</div>
+      <div style="font-size:0.8rem;color:var(--dim2)">
+        <a href="/privacy/safeopen.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+        <a href="/terms/safeopen.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+        <a href="/support/safeopen.html">Support</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/katafract-mark.svg" class="nav-mark" alt=""> Katafract LLC
+      </div>
+      <nav class="footer-nav">
+        <a href="/privacy/safeopen.html">Privacy Policy</a>
+        <a href="/terms/safeopen.html">Terms of Service</a>
+        <a href="/support/safeopen.html">Support</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:hello@katafract.com">Contact</a>
+      </nav>
+      <p class="footer-motto">Teneo &middot; Effrenus &middot; Katafractarius</p>
+      <p class="footer-copy">&copy; 2026 Katafract LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — SafeOpen by Katafract</title>
+  <meta name="description" content="Get help with SafeOpen. FAQs, how-to guides, and contact information.">
+  <link rel="canonical" href="https://katafract.com/support/safeopen">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Support — SafeOpen by Katafract">
+  <meta property="og:description" content="Get help with SafeOpen. FAQs, how-to guides, and contact information.">
+  <meta property="og:url" content="https://katafract.com/support/safeopen">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Katafract">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Support — SafeOpen by Katafract">
+  <meta name="twitter:description" content="Get help with SafeOpen. FAQs, how-to guides, and contact information.">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- Fonts (self-hosted) -->
+  <link rel="preload" href="/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">
+      <img src="/katafract-mark.svg" class="nav-mark" alt="">
+      <span class="nav-brand-name">Katafract</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="hide-sm"><a href="/enclave.html">Enclave</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="prose-page">
+    <div class="prose-header">
+      <p class="prose-eyebrow">SafeOpen &mdash; Support</p>
+      <h1>SafeOpen Support</h1>
+      <p class="prose-meta">Questions? &mdash; <a href="mailto:hello@katafract.com">hello@katafract.com</a> &mdash; <a href="/support.html">All app support &rarr;</a></p>
+    </div>
+
+    <div class="prose-body">
+
+      <h2>Getting Started</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-q">How do I scan a QR code?</button>
+          <div class="faq-a">
+            Open SafeOpen and point your camera at any QR code. The app decodes it immediately without pressing any button. You&rsquo;ll see the payload type, destination, and a risk assessment before you decide whether to open it.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How do I inspect a link I already have?</button>
+          <div class="faq-a">
+            Tap the &ldquo;Paste&rdquo; tab and paste your link. You can also share a link from Safari, Messages, or any other app by tapping the share icon and selecting SafeOpen from the share sheet.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What does SafeOpen do after scanning?</button>
+          <div class="faq-a">
+            It classifies the payload (URL, Wi-Fi, contact, calendar, plain text, etc.), normalizes the URL if applicable, runs local risk heuristics, and shows you a plain-language explanation of what the payload is and what opening it will do.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does it send the URL anywhere to check it?</button>
+          <div class="faq-a">
+            No. All scanning and risk scoring in the current version runs entirely on your device. No URL, QR payload, or scan result is ever sent to Katafract or any third party. See the <a href="/privacy/safeopen.html">Privacy Policy</a> for full details.
+          </div>
+        </div>
+      </div>
+
+      <h2>Risk Scoring</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-q">What does each risk level mean?</button>
+          <div class="faq-a">
+            SafeOpen uses four levels: <strong>Likely Safe</strong> (standard URL, recognizable domain, no flags), <strong>Use Caution</strong> (short URL, unusual parameters, or patterns worth noting), <strong>High Risk</strong> (raw IP address, punycode spoofing, suspicious port, or known risky patterns), and <strong>Unknown</strong> (non-URL payload or insufficient data to score).
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Why is a link I trust showing as &ldquo;Use Caution&rdquo;?</button>
+          <div class="faq-a">
+            SafeOpen uses deterministic local heuristics that flag structural patterns, not reputation databases. A short URL from a trusted service, for example, will always show &ldquo;Use Caution&rdquo; because short URLs obscure the destination by design. The explanation tells you exactly why it scored that way so you can make an informed call.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I override a risk score and open anyway?</button>
+          <div class="faq-a">
+            Yes. SafeOpen shows you the information but never blocks you. Tap &ldquo;Open&rdquo; at any risk level and the app will hand off to the appropriate system handler &mdash; your browser for URLs, the Contacts app for vCards, and so on.
+          </div>
+        </div>
+      </div>
+
+      <h2>Privacy &amp; Data</h2>
+
+      <div class="faq-section">
+        <div class="faq-item">
+          <button class="faq-q">Does SafeOpen require an account?</button>
+          <div class="faq-a">
+            No. SafeOpen has no accounts, no sign-in, and no registration of any kind. Download, scan, done.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Where is my scan history stored?</button>
+          <div class="faq-a">
+            Scan history is stored only in local device storage. It is never synced to iCloud, uploaded to Katafract, or shared with anyone. Deleting the app deletes the history.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Does SafeOpen collect any analytics?</button>
+          <div class="faq-a">
+            No. There are no analytics SDKs, crash reporters, or network calls of any kind in the core app. Zero data is collected.
+          </div>
+        </div>
+      </div>
+
+      <h2>Contact Us</h2>
+      <p>Didn&rsquo;t find what you were looking for? We&rsquo;re happy to help.</p>
+      <div class="contact-card">
+        <h3>Get in Touch</h3>
+        <p>Katafract LLC</p>
+        <p><a href="mailto:hello@katafract.com">hello@katafract.com</a></p>
+        <p>We typically respond within one business day.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="/katafract-mark.svg" class="nav-mark" alt=""> Katafract LLC
+      </div>
+      <nav class="footer-nav">
+        <a href="/privacy.html">Privacy Policies</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/support.html">Support</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:hello@katafract.com">Contact</a>
+      </nav>
+      <p class="footer-motto">Teneo &middot; Effrenus &middot; Katafractarius</p>
+      <p class="footer-copy">&copy; 2026 Katafract LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
