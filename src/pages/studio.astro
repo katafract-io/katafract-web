@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Studio — Katafract LLC"
+  description="Katafract LLC operates two brand lanes: the Katafract Enclave privacy platform and the Mosaic family of personal-archive apps. One company, one infrastructure, two voices."
+  section="prose"
+>
+  <link slot="head" rel="stylesheet" href="/style.css" />
+
+  <div class="prose-header">
+    <p class="prose-eyebrow">Studio</p>
+    <h1>Two brand lanes, one company.</h1>
+    <p class="prose-meta">Katafract LLC &mdash; <a href="mailto:hello@katafract.com">hello@katafract.com</a></p>
+  </div>
+
+  <div class="prose-body">
+    <p>Katafract LLC ships software under two distinct brand lanes that share infrastructure (identity, payments, encrypted storage, the global node fleet) but speak in different voices.</p>
+
+    <h2>Katafract Enclave</h2>
+    <p>The privacy operator brand. Cold, serious, end-to-end. Includes Haven (DoH DNS), WraithVPN, Vaultyx (encrypted storage), and the utility apps (DocArmor, ExifArmor, ParkArmor, SafeOpen). All on <a href="https://katafract.com">katafract.com</a>.</p>
+
+    <h2>Mosaic family</h2>
+    <p>Warm personal-archive brands. Each on its own <code>.io</code>:</p>
+    <ul>
+      <li><a href="https://meritmosaic.io">MeritMosaic</a> &mdash; the things you do, remembered. A self-promotion journal for quiet achievers.</li>
+      <li><a href="https://aeromosaic.io">AeroMosaic</a> &mdash; family memory + trip archiving with role-graph Circles.</li>
+      <li><a href="https://meridianmosaic.io">MeridianMosaic</a> &mdash; personal finance history archiving.</li>
+    </ul>
+
+    <h2>Why the split?</h2>
+    <p>The Enclave audience wants armored privacy and is skeptical of marketing warmth. The Mosaic audience wants permanence and is skeptical of cold privacy framing. Same company, same infrastructure, different stories &mdash; and a <a href="/pricing">single subscription</a> that unlocks across both lanes for those who want everything.</p>
+
+    <h2>Behind the scenes</h2>
+    <p>Both lanes share the same Sigil identity, the same Stripe account, the same WraithGate fleet, and the same encrypted storage cluster. The infrastructure is one platform; the brands speak to different parts of the same person.</p>
+  </div>
+</Base>
