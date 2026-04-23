@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wraith — Your traffic is your business</title>
+  <title>WraithVPN — WireGuard VPN</title>
   <meta name="description" content="Wraith is a privacy-first VPN built on WireGuard. No logs, no tracking, no compromise. Global nodes across EU, US, and Asia. Haven DNS included. Built by people who refuse to be the product.">
   <link rel="canonical" href="https://katafract.com/apps/wraith">
   <!-- Open Graph -->
-  <meta property="og:title" content="Wraith — Your traffic is your business">
+  <meta property="og:title" content="WraithVPN — WireGuard VPN">
   <meta property="og:description" content="Privacy-first VPN. No logs, no tracking, no compromise. WireGuard-based, global nodes across EU, US, and Asia, Haven DNS built-in. Available on iOS.">
   <meta property="og:url" content="https://katafract.com/apps/wraith">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Katafract">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Wraith — Your traffic is your business">
+  <meta name="twitter:title" content="WraithVPN — WireGuard VPN">
   <meta name="twitter:description" content="Privacy-first VPN. No logs, no tracking, no compromise. WireGuard-based, global nodes across EU, US, and Asia, Haven DNS.">
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/fonts.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="/style.css">
   <style>
     /* Wraith brand override — purple accent instead of cyan */
@@ -419,6 +419,12 @@
       .app-main { padding: 0 1.25rem 4rem; }
     }
   </style>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WraithVPN","operatingSystem":"iOS, macOS, Android","applicationCategory":"SecurityApplication","description":"WireGuard-based VPN with kill switch, multi-hop, and 10+ global exit nodes. Included with Enclave or Sovereign subscription.","offers":{"@type":"Offer","priceCurrency":"USD","price":"8.00","description":"Enclave subscription"},"author":{"@type":"Organization","name":"Katafract LLC"}}
+  </script>
+    <!-- Privacy-friendly analytics, self-hosted on artemis. No cookies, no PII, no cross-site tracking. -->
+    <script defer data-domain="katafract.com" src="https://analytics.katafract.io/js/script.js"></script>
+
 </head>
 <body>
 
@@ -461,7 +467,7 @@
     <div class="app-page-section">
       <div class="app-section-label">What Wraith Is</div>
       <h2 class="app-section-title">A VPN built for people who understand what&rsquo;s at stake</h2>
-      <p class="app-section-sub">Most VPNs sell privacy as a feature while quietly building the infrastructure to compromise it. Wraith is different. It&rsquo;s built on open protocols, runs on infrastructure we control end-to-end, and has one policy: we don&rsquo;t keep records of you.</p>
+      <p class="app-section-sub">Most VPNs sell privacy as a feature while quietly building the infrastructure to compromise it. WraithVPN is different. It&rsquo;s built on open protocols, runs on infrastructure we control end-to-end, and has one policy: we don&rsquo;t keep records of you.</p>
     </div>
 
     <div class="features-grid" style="margin-top:2.5rem">
@@ -568,14 +574,14 @@
         <div class="step-num">01</div>
         <div class="step-body">
           <h3>Sign In with Apple</h3>
-          <p>Your identity stays with Apple. Wraith receives only an anonymized identifier &mdash; no email, no name, nothing you didn&rsquo;t choose to share. Sign in once, connect from any device.</p>
+          <p>Your identity stays with Apple. WraithVPN receives only an anonymized identifier &mdash; no email, no name, nothing you didn&rsquo;t choose to share. Sign in once, connect from any device.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-body">
           <h3>Choose Your Node</h3>
-          <p>Wraith surfaces the closest, fastest node by default. Or tap any location in the list to route through a specific region. Nodes update automatically as new servers come online.</p>
+          <p>WraithVPN surfaces the closest, fastest node by default. Or tap any location in the list to route through a specific region. Nodes update automatically as new servers come online.</p>
         </div>
       </div>
       <div class="step">
@@ -592,7 +598,7 @@
     <div class="manifesto">
       <div class="manifesto-label">Our commitment</div>
       <h2>We believe in the integrity of your data &mdash; and ours.</h2>
-      <p>The VPN industry has a problem. Many providers market privacy while building revenue streams around the very data they claim to protect. Ad networks. Analytics pipelines. &ldquo;Anonymized&rdquo; usage statistics that aren&rsquo;t. We&rsquo;ve watched it happen and built Wraith in direct opposition to it.</p>
+      <p>The VPN industry has a problem. Many providers market privacy while building revenue streams around the very data they claim to protect. Ad networks. Analytics pipelines. &ldquo;Anonymized&rdquo; usage statistics that aren&rsquo;t. We&rsquo;ve watched it happen and built WraithVPN in direct opposition to it.</p>
       <p>We don&rsquo;t track which sites you visit. We don&rsquo;t log when you connected or for how long. We don&rsquo;t store IP addresses assigned to sessions. We don&rsquo;t sell anonymized anything &mdash; because we don&rsquo;t collect it in the first place. When someone asks us to hand over user data, we genuinely have nothing to give them.</p>
       <p>This isn&rsquo;t a marketing position. It&rsquo;s an architectural one. The logs don&rsquo;t exist. The pipeline was never built. That choice was made before the first line of server code was written.</p>
       <div class="privacy-pills">
@@ -614,40 +620,28 @@
     </div>
 
     <div class="pricing-grid">
-      <div class="plan-card">
-        <div class="plan-label">Haven</div>
-        <div class="plan-price">$1.99</div>
-        <div class="plan-cadence">/ month &nbsp;&middot;&nbsp; $14.99/yr</div>
-        <ul class="plan-features">
-          <li class="hi">&#x2713; Haven DNS protection</li>
-          <li class="hi">&#x2713; Ad &amp; tracker blocking</li>
-          <li class="hi">&#x2713; Global DNS nodes (EU, US, Asia)</li>
-          <li>&#x2212; VPN tunnel</li>
-          <li>&#x2212; Kill switch</li>
-        </ul>
-      </div>
       <div class="plan-card featured">
         <div class="plan-label">Enclave &nbsp;<span style="font-size:0.58rem;background:var(--wraith-dim);color:var(--wraith);padding:0.1rem 0.45rem;border-radius:999px;border:1px solid var(--wraith-border)">Popular</span></div>
-        <div class="plan-price">$4.99</div>
-        <div class="plan-cadence">/ month &nbsp;&middot;&nbsp; $39.99/yr</div>
+        <div class="plan-price">$8</div>
+        <div class="plan-cadence">/ month &nbsp;&middot;&nbsp; $64/yr</div>
         <ul class="plan-features">
-          <li class="hi">&#x2713; Everything in Haven</li>
-          <li class="hi">&#x2713; Full WireGuard VPN</li>
-          <li class="hi">&#x2713; Kill switch</li>
-          <li class="hi">&#x2713; Standard &amp; Full tunnel modes</li>
-          <li class="hi">&#x2713; Dynamic server selection</li>
+          <li class="hi">&#x2713; WraithVPN with kill switch</li>
+          <li class="hi">&#x2713; Haven DNS included</li>
+          <li class="hi">&#x2713; Global exit nodes</li>
+          <li class="hi">&#x2713; 5 devices</li>
+          <li class="hi">&#x2713; All utility apps unlocked</li>
         </ul>
       </div>
       <div class="plan-card">
-        <div class="plan-label">Enclave+</div>
-        <div class="plan-price">$9.99</div>
-        <div class="plan-cadence">/ month &nbsp;&middot;&nbsp; $79.99/yr</div>
+        <div class="plan-label">Sovereign</div>
+        <div class="plan-price">$18</div>
+        <div class="plan-cadence">/ month &nbsp;&middot;&nbsp; $144/yr</div>
         <ul class="plan-features">
           <li class="hi">&#x2713; Everything in Enclave</li>
-          <li class="hi">&#x2713; Multi-hop routing</li>
-          <li class="hi">&#x2713; Up to 10 devices</li>
-          <li class="hi">&#x2713; Early access to new features</li>
-          <li class="hi">&#x2713; Advanced blocklist controls</li>
+          <li class="hi">&#x2713; Multi-hop VPN routing</li>
+          <li class="hi">&#x2713; 1TB Vaultyx storage</li>
+          <li class="hi">&#x2713; Unlimited devices</li>
+          <li class="hi">&#x2713; All future apps</li>
         </ul>
       </div>
     </div>

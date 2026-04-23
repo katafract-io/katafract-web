@@ -69,6 +69,61 @@
     .dns-setup-item .addr { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: #00F0FF; }
     @media (max-width: 640px) { .plans-grid { grid-template-columns: 1fr; } th, td { padding: .6rem .5rem; } }
   </style>
+  <script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Enclave",
+    "description": "VPN with kill switch, multi-hop, global exit nodes, and haven DNS included",
+    "offers": [
+      {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "8.00",
+        "url": "https://buy.stripe.com/28E3cv0tH2qK5EK4kUffy0j",
+        "billingDuration": "P1M",
+        "pricingPattern": "Subscription"
+      },
+      {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "64.00",
+        "url": "https://buy.stripe.com/aFaaEXgsFghA8QWcRqffy0k",
+        "billingDuration": "P1Y",
+        "pricingPattern": "Subscription"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Sovereign",
+    "description": "Complete privacy perimeter with multi-hop VPN, 1TB encrypted storage, and all apps included",
+    "offers": [
+      {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "18.00",
+        "url": "https://buy.stripe.com/7sY9ATekx1mG2sydVuffy0h",
+        "billingDuration": "P1M",
+        "pricingPattern": "Subscription"
+      },
+      {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "144.00",
+        "url": "https://buy.stripe.com/8x228ra4h1mGaZ4dVuffy0i",
+        "billingDuration": "P1Y",
+        "pricingPattern": "Subscription"
+      }
+    ]
+  }
+]
+  </script>
+    <!-- Privacy-friendly analytics, self-hosted on artemis. No cookies, no PII, no cross-site tracking. -->
+    <script defer data-domain="katafract.com" src="https://analytics.katafract.io/js/script.js"></script>
+
 </head>
 <body>
 
@@ -215,7 +270,7 @@
         <li><span class="check" style="color:#FF006E">✓</span> Praetor (when shipping) + all future apps</li>
         <li><span class="check" style="color:#FF006E">✓</span> Unlimited devices · Cross-device sync</li>
       </ul>
-      <a href="https://buy.stripe.com/SOVEREIGN_LINK_TBD" class="plan-cta primary" id="cta-sovereign">Get Sovereign →</a>
+      <a href="https://buy.stripe.com/7sY9ATekx1mG2sydVuffy0h"  class="plan-cta primary" id="cta-sovereign">Get Sovereign →</a>
     </div>
 
   </div>
@@ -328,6 +383,15 @@
     </div>
 
   </div>
+    <div class="faq-item">
+      <div class="faq-q">I paid for Enclave. Now what?</div>
+      <div class="faq-a"><ol style="margin: 0; padding-left: 1.5rem; color: #8C94A6;">
+        <li style="margin-bottom: 0.5rem;"><strong>Install WraithVPN</strong> from the <a href="/apps/wraith.html#appstore">App Store</a></li>
+        <li style="margin-bottom: 0.5rem;"><strong>Get your token</strong> from your Stripe receipt or email</li>
+        <li style="margin-bottom: 0;"><strong>Go to <a href="https://connect.katafract.com">connect.katafract.com</a></strong> and paste your token — it auto-activates across every Katafract app that uses App Group <code>group.com.katafract.enclave</code>. If you subscribe directly in the iOS app instead, this is done automatically.</li>
+      </ol></div>
+    </div>
+
 
 </div>
 </main>
@@ -354,16 +418,12 @@
 <script>
   let billing = 'monthly';
   const monthlyLinks = {
-    haven: 'https://buy.stripe.com/aFa7sLekx8P8aZ47x6ffy06',
     enclave: 'https://buy.stripe.com/bJe28r4JX9TcgjocRqffy04',
-    enclave_plus: 'https://buy.stripe.com/5kQcN53FT0iC1oubNmffy08',
-    sovereign: 'https://buy.stripe.com/SOVEREIGN_LINK_TBD'
+    sovereign: 'https://buy.stripe.com/7sY9ATekx1mG2sydVuffy0h'
   };
   const annualLinks = {
-    haven: 'https://buy.stripe.com/00wcN55O1aXgffkg3Cffy07',
     enclave: 'https://buy.stripe.com/9B600jfoB9Tcd7cbNmffy05',
-    enclave_plus: 'https://buy.stripe.com/28EfZh90d9Tc8QW3gQffy09',
-    sovereign: 'https://buy.stripe.com/SOVEREIGN_LINK_ANNUAL_TBD'
+    sovereign: 'https://buy.stripe.com/8x228ra4h1mGaZ4dVuffy0i'
   };
 
   function setBilling(mode) {
@@ -375,11 +435,7 @@
 
     document.querySelectorAll('.monthly-price').forEach(el => el.style.display = mode === 'monthly' ? '' : 'none');
     document.querySelectorAll('.annual-price').forEach(el => el.style.display = mode === 'annual' ? '' : 'none');
-
-    document.getElementById('cta-haven').href = mode === 'annual' ? annualLinks.haven : monthlyLinks.haven;
-    document.getElementById('cta-enclave').href = mode === 'annual' ? annualLinks.enclave : monthlyLinks.enclave;
-    document.getElementById('cta-enclave-plus').href = mode === 'annual' ? annualLinks.enclave_plus : monthlyLinks.enclave_plus;
-    document.getElementById('cta-sovereign').href = mode === 'annual' ? annualLinks.sovereign : monthlyLinks.sovereign;
+    document.getElementById('cta-enclave').href = mode === 'annual' ? annualLinks.enclave : monthlyLinks.enclave;    document.getElementById('cta-sovereign').href = mode === 'annual' ? annualLinks.sovereign : monthlyLinks.sovereign;
   }
 
   document.querySelectorAll('.faq-item').forEach(item => {
