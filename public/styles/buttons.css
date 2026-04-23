@@ -1,0 +1,61 @@
+/**
+ * Unified button system for katafract.com
+ * Base .btn + modifiers: --primary, --secondary, --ghost
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+/* Primary: solid cyan fill */
+.btn--primary {
+  background: var(--cyan);
+  color: #050510;
+  border-color: var(--cyan);
+}
+
+.btn--primary:hover {
+  background: rgba(0, 240, 255, 0.85);
+  border-color: rgba(0, 240, 255, 0.85);
+}
+
+/* Secondary: cyan ghost outline */
+.btn--secondary {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+}
+
+.btn--secondary:hover {
+  background: rgba(0, 240, 255, 0.08);
+  border-color: var(--cyan);
+}
+
+/* Ghost: text-only */
+.btn--ghost {
+  background: transparent;
+  color: var(--cyan);
+  border: none;
+}
+
+.btn--ghost:hover {
+  background: transparent;
+  color: rgba(0, 240, 255, 0.8);
+}
