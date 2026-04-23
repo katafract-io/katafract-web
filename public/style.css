@@ -532,3 +532,10 @@ button:focus-visible {
   .nav-links a { padding: 0.5rem 0; }
   .faq-q { min-height: 48px; }
 }
+
+/* ── Unified container ─────────────────────────────────────── */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 max(1.5rem, 4vw);
+}

@@ -67,6 +67,10 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
   <link rel="preload" href="/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fonts.css" />
 
+  <!-- Design system stylesheets -->
+  <link rel="stylesheet" href="/styles/buttons.css" />
+  <link rel="stylesheet" href="/styles/app-colors.css" />
+
   <!-- Page-specific head additions (JSON-LD, extra meta, inline styles) -->
   <slot name="head" />
 

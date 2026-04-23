@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 <Base
   title="WraithVPN — WireGuard VPN"
@@ -17,49 +18,8 @@ import Base from '../../layouts/Base.astro';
       --wraith-glow: rgba(129,140,248,0.06);
     }
 
-    /* App page hero */
-    .app-hero {
-      padding: 4rem 1.5rem 3rem;
-      max-width: 960px;
-      margin: 0 auto;
-    }
+    /* App main container */
     .app-main { max-width: 960px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-
-    .app-hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--wraith);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .app-hero-eyebrow .back-link {
-      color: var(--dim2);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-    }
-    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
-
-    .app-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 4.8rem);
-      font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.25rem;
-    }
-    .app-hero h1 em { font-style: normal; color: var(--wraith); }
-
-    .app-hero .tagline {
-      font-size: 1.1rem;
-      color: var(--dim);
-      line-height: 1.75;
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-    }
 
     .app-cta-row {
       display: flex;
@@ -442,9 +402,8 @@ import Base from '../../layouts/Base.astro';
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.97 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
         Download on the App Store
       </a>
-      <a href="/support/wraith" class="btn-secondary">Learn More</a>
+      <a href="/support/wraith" class="btn--secondary">Learn More</a>
     </div>
-  </div>
 
   <main class="app-main">
 

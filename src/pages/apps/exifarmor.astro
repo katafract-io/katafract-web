@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
 ---
 <Base
   title={`ExifArmor — Share photos, not your location`}
@@ -10,46 +11,7 @@ import Base from '../../layouts/Base.astro';
 >
   <link slot="head" rel="stylesheet" href="/style.css" />
   <style slot="head" is:global set:html={`
-    /* App page hero */
-    .app-hero {
-      padding: 4rem 1.5rem 3rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
     .app-main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-    .app-hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--cyan);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .app-hero-eyebrow .back-link {
-      color: var(--dim2);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-    }
-    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
-    .app-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.25rem;
-    }
-    .app-hero h1 em { font-style: normal; color: var(--cyan); }
-    .app-hero .tagline {
-      font-size: 1.1rem;
-      color: var(--dim);
-      line-height: 1.7;
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-    }
     .app-cta-row {
       display: flex;
       align-items: center;

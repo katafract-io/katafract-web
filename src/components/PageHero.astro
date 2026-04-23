@@ -1,0 +1,93 @@
+---
+/**
+ * PageHero — single unified hero component for all page types
+ * Reduces duplication across app pages, landing pages, and prose.
+ *
+ * Usage:
+ *   <PageHero
+ *     eyebrow="Wraith"
+ *     title="Your traffic is your <em>business</em>"
+ *     subhead="Optional tagline below the title"
+ *     align="left"
+ *     accent="var(--wraith)"
+ *   />
+ */
+
+export interface Props {
+  eyebrow?: string;
+  align?: "center" | "left";
+  title: string;
+  subhead?: string;
+  accent?: string;
+}
+
+const {
+  eyebrow,
+  align = "left",
+  title,
+  subhead,
+  accent = "var(--cyan)",
+} = Astro.props;
+
+const isCenter = align === "center";
+const clampSize = isCenter ? "clamp(2.5rem, 6vw, 4.8rem)" : "clamp(1.75rem, 4vw, 2.75rem)";
+const alignment = isCenter ? "center" : "left";
+---
+
+<style define:vars={{ accent, clampSize, alignment }}>
+  .page-hero {
+    padding: 4rem 1.5rem 3rem;
+    text-align: var(--alignment);
+  }
+
+  .page-hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: var(--clampSize);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+  }
+
+  .page-hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .page-hero .subhead {
+    font-size: 1.1rem;
+    color: var(--dim);
+    line-height: 1.75;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .page-hero { padding: 6rem 3.5rem 4.5rem; }
+  }
+  @media (min-width: 1100px) {
+    .page-hero { padding: 7rem 5rem 5rem; }
+  }
+  @media (max-width: 480px) {
+    .page-hero { padding: 3rem 1.25rem 2.5rem; }
+  }
+</style>
+
+<div class="page-hero">
+  {eyebrow && <div class="page-hero-eyebrow">{eyebrow}</div>}
+  <h1 set:html={title} />
+  {subhead && <p class="subhead">{subhead}</p>}
+  <slot />
+</div>
