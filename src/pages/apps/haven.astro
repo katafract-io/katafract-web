@@ -1,5 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { appBySlug } from '../../data/apps';
+const app = appBySlug('haven');
 ---
 <Base
   title={`Haven — Private DNS for every device`}
@@ -9,55 +12,9 @@ import Base from '../../layouts/Base.astro';
   ogDescription={`Haven DNS blocks ads, trackers, and malware at the DNS layer — before requests leave your device. Free. No account. No VPN required.`}
   ogImage="https://katafract.com/images/og-haven.jpg"
 >
-  <style slot="head" is:global set:html={`
+  <style slot="head" is:global>
     :root { --app-accent: var(--haven); }
-    /* App page hero */
-    .app-hero {
-      padding: 4rem 1.5rem 3rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
     .app-main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-    .app-hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--app-accent);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .app-hero-eyebrow .back-link {
-      color: var(--dim2);
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-    }
-    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
-    .app-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.25rem;
-    }
-    .app-hero h1 em { font-style: normal; color: var(--app-accent); }
-    .app-hero .tagline {
-      font-size: 1.1rem;
-      color: var(--dim);
-      line-height: 1.7;
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-    }
-    .app-cta-row {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -77,84 +34,21 @@ import Base from '../../layouts/Base.astro';
       font-size: 0.78rem;
       color: var(--dim2);
     }
-
-    /* Divider */
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 3.5rem 0;
-    }
-
-    /* Feature grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0 3rem;
-    }
-    .feature-card {
-      background: rgba(10,10,20,0.5);
-      border: 1px solid var(--border);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: border-color 0.2s;
-    }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 3.5rem 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0 3rem; }
+    .feature-card { background: rgba(10,10,20,0.5); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; transition: border-color 0.2s; }
     .feature-card:hover { border-color: rgba(74,222,128,0.18); }
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .feature-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-    .feature-desc {
-      font-size: 0.875rem;
-      color: var(--dim);
-      line-height: 1.65;
-    }
-
-    /* Section headings */
-    .app-page-section {
-      margin-bottom: 0.5rem;
-    }
-    .app-section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--app-accent);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .app-section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.5rem;
-    }
-    .app-section-sub {
-      font-size: 0.95rem;
-      color: var(--dim);
-      line-height: 1.7;
-      margin-bottom: 0;
-    }
-    @media (min-width: 768px) {
-      .app-hero { padding: 6rem 3.5rem 4.5rem; }
-      .app-main { padding: 0 3.5rem 7rem; }
-    }
-    @media (min-width: 1100px) {
-      .app-hero { padding: 7rem 5rem 5rem; }
-      .app-main { padding: 0 5rem 8rem; }
-    }
-    @media (max-width: 480px) {
-      .app-hero { padding: 3rem 1.25rem 2.5rem; }
-      .app-main { padding: 0 1.25rem 4rem; }
-    }
-  `}></style>
+    .feature-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .feature-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    .feature-desc { font-size: 0.875rem; color: var(--dim); line-height: 1.65; }
+    .app-page-section { margin-bottom: 0.5rem; }
+    .app-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--app-accent); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .app-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .app-section-sub { font-size: 0.95rem; color: var(--dim); line-height: 1.7; margin-bottom: 0; }
+    @media (min-width: 768px) { .app-main { padding: 0 3.5rem 7rem; } }
+    @media (min-width: 1100px) { .app-main { padding: 0 5rem 8rem; } }
+    @media (max-width: 480px) { .app-main { padding: 0 1.25rem 4rem; } }
+  </style>
   <script slot="head" type="application/ld+json" is:inline set:html={`
   {
     "@context": "https://schema.org",
@@ -172,23 +66,17 @@ import Base from '../../layouts/Base.astro';
     "url": "https://katafract.com/apps/haven"
   }
   `}></script>
-  <Fragment set:html={`<div class="app-hero">
-    <div class="app-hero-eyebrow">
-      <span>Haven</span>
-      <span>&middot;</span>
-      <span>Free</span>
-      <span>&middot;</span>
-      <a href="/" class="back-link">by Katafract &nearr;</a>
-    </div>
-    <h1>Private DNS for<br>every <em>network</em></h1>
-    <p class="tagline">Haven blocks ads, trackers, and malware at the DNS layer — before requests ever leave your device. No VPN. No account. Free on iPhone, Mac, or any device that supports DNS-over-HTTPS. Same anycast fleet that powers WraithVPN.</p>
-    <div class="app-cta-row">
-      <a href="/dns" class="btn-primary">
-        Install Profile
-      </a>
-      <span class="price-note">Free · No signup required · Included with Enclave/Sovereign</span>
-    </div>
-  </div>
+  <PageHero
+    eyebrow={app?.name}
+    title="Private DNS for<br>every <em>network</em>"
+    subhead="Haven blocks ads, trackers, and malware at the DNS layer — before requests ever leave your device. No VPN. No account. Free on iPhone, Mac, or any device that supports DNS-over-HTTPS. Same anycast fleet that powers WraithVPN."
+    accent="var(--app-accent)"
+  >
+    <a href="/dns" class="btn-primary">
+      Install the Haven DNS profile &rarr;
+    </a>
+    <span class="price-note" style="display:block;margin-top:0.75rem">Free · No signup required · Included with Enclave/Sovereign</span>
+  </PageHero>
 
   <main class="app-main">
 
@@ -287,5 +175,5 @@ import Base from '../../layouts/Base.astro';
       Haven DNS is free and included with all Enclave and Sovereign plans. <a href="/pricing" style="color:var(--haven);text-decoration:underline;">See what's included →</a>
     </p>
 
-  </main>`} />
+  </main>
 </Base>
