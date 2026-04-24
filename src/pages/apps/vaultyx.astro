@@ -25,6 +25,10 @@ import PageHero from '../../components/PageHero.astro';
     .privacy-block p:last-child { margin-bottom: 0; }
     .privacy-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .privacy-pill { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: rgba(255,0,110,0.06); border: 1px solid rgba(255,0,110,0.15); color: #FF006E; }
+    .unlike-list { list-style: none; padding: 0; margin: 1rem 0 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .unlike-list li { font-size: 0.9rem; color: var(--dim); line-height: 1.55; padding-left: 1.25rem; position: relative; }
+    .unlike-list li::before { content: '—'; position: absolute; left: 0; color: var(--vaultyx, #FF006E); font-weight: 600; }
+    .unlike-list li strong { color: var(--text); font-weight: 700; }
     .app-section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #FF006E; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; }
     .app-section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .app-section-sub { font-size: 0.95rem; color: var(--dim); line-height: 1.7; }
@@ -128,7 +132,11 @@ import PageHero from '../../components/PageHero.astro';
     <div class="privacy-block">
       <h2>🔒 Mathematically impossible to scan</h2>
       <p>Vaultyx uses client-side encryption. The server never receives your unencrypted data, never holds your encryption keys, and has no way to read your files. Content scanning, AI training, warrant compliance — all mathematically impossible without your key.</p>
-      <p><strong>Unlike iCloud:</strong> Apple scans photos before they upload. We never see anything to scan. <strong>Unlike Dropbox:</strong> We have no plaintext copy on servers. <strong>Unlike Google Drive:</strong> No content analysis, no AI training, no account profiles built from your data.</p>
+      <ul class="unlike-list">
+        <li><strong>Unlike iCloud:</strong> Apple scans photos before they upload. We never see anything to scan.</li>
+        <li><strong>Unlike Dropbox:</strong> We have no plaintext copy on servers. Ever.</li>
+        <li><strong>Unlike Google Drive:</strong> No content analysis, no AI training, no account profiles built from your data.</li>
+      </ul>
       <div class="privacy-pills">
         <span class="privacy-pill">AES-256-GCM encrypted</span>
         <span class="privacy-pill">Client-side only</span>
