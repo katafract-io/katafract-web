@@ -1,5 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import { appBySlug } from '../../data/apps';
+const app = appBySlug('safeopen');
 ---
 <Base
   title="SafeOpen · Inspect any link before you tap it"
@@ -10,31 +13,7 @@ import Base from '../../layouts/Base.astro';
 >
   <style slot="head" is:global>
     :root { --app-accent: var(--safeopen); }
-    .app-hero { padding: 4rem 1.5rem 3rem; max-width: 900px; margin: 0 auto; }
     .app-main { max-width: 900px; margin: 0 auto; padding: 0 1.5rem 5rem; }
-    .app-hero-eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--app-accent);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .app-hero-eyebrow .back-link { color: var(--dim2); font-size: 0.65rem; letter-spacing: 0.15em; }
-    .app-hero-eyebrow .back-link:hover { color: var(--dim); text-decoration: none; }
-    .app-hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.25rem;
-    }
-    .app-hero h1 em { font-style: normal; color: var(--app-accent); }
-    .app-hero .tagline { font-size: 1.1rem; color: var(--dim); line-height: 1.7; max-width: 580px; margin-bottom: 2.5rem; }
     .live-badge {
       display: inline-flex;
       align-items: center;
@@ -105,18 +84,9 @@ import Base from '../../layouts/Base.astro';
     .qr-demo-dest { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--dim); word-break: break-all; text-align: center; }
     .qr-demo-result { font-size: 0.8rem; color: var(--dim); line-height: 1.5; text-align: center; }
 
-    @media (min-width: 768px) {
-      .app-hero { padding: 6rem 3.5rem 4.5rem; }
-      .app-main { padding: 0 3.5rem 7rem; }
-    }
-    @media (min-width: 1100px) {
-      .app-hero { padding: 7rem 5rem 5rem; }
-      .app-main { padding: 0 5rem 8rem; }
-    }
-    @media (max-width: 480px) {
-      .app-hero { padding: 3rem 1.25rem 2.5rem; }
-      .app-main { padding: 0 1.25rem 4rem; }
-    }
+    @media (min-width: 768px) { .app-main { padding: 0 3.5rem 7rem; } }
+    @media (min-width: 1100px) { .app-main { padding: 0 5rem 8rem; } }
+    @media (max-width: 480px) { .app-main { padding: 0 1.25rem 4rem; } }
   </style>
 
   <script slot="head" type="application/ld+json">
@@ -140,18 +110,16 @@ import Base from '../../layouts/Base.astro';
     }
   </script>
 
-  <div class="app-hero">
-    <div class="app-hero-eyebrow">
-      <span>SafeOpen</span>
-      <span>&middot;</span>
-      <a href="/" class="back-link">by Katafract &nearr;</a>
-    </div>
-    <h1>Know before you <em>open.</em></h1>
-    <p class="tagline">A free QR scanner and link inspector for iOS. Risk scoring runs entirely on your device. Optional scan credits unlock AI summaries and a privacy relay for the links you actually want to open.</p>
+  <PageHero
+    eyebrow={app?.name}
+    title="Know before you <em>open.</em>"
+    subhead="A free QR scanner and link inspector for iOS. Risk scoring runs entirely on your device. Optional scan credits unlock AI summaries and a privacy relay for the links you actually want to open."
+    accent="var(--app-accent)"
+  >
     <div class="live-badge">
       ⏳ Coming soon to iOS &middot; In Apple review
     </div>
-  </div>
+  </PageHero>
 
   <main class="app-main">
 
